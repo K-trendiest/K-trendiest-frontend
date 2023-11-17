@@ -9,12 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/react-slick": "^0.23.12",
     "@types/react-transition-group": "^4.4.9",
     "framer-motion": "^10.16.5",
     "next": "14.0.2",
     "react": "^18",
     "react-dom": "^18",
-    "react-transition-group": "^4.4.5"
+    "react-slick": "^0.29.0",
+    "react-transition-group": "^4.4.5",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^11.0.4"
   },
   "devDependencies": {
     "@types/node": "^20",
