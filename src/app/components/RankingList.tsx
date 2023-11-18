@@ -1,8 +1,7 @@
 import Link from "next/link";
 
-export default function RankingList({ backgroundColor, item }
+export default function RankingList({ item }
 : { 
-  backgroundColor: string;
   item:TrendItem;
 }) {
   return (
@@ -15,7 +14,7 @@ export default function RankingList({ backgroundColor, item }
           alt={item.title}
         />
         <Link href={item.infoLink} className="flex flex-col items-center">
-          <div style={{backgroundColor: backgroundColor }} className="text-lg">
+          <div className="text-lg">
             {item.title}
           </div>
           <div>

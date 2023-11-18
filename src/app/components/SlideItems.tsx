@@ -9,38 +9,33 @@ import "swiper/css/pagination";
 
 import RankingList from './RankingList';
 
-export default function SlideItems({backgroundColor, maxWidth, items}: {
-  backgroundColor: string;
+export default function SlideItems({maxWidth, items}: {
   maxWidth: number;
   items:TrendItem[];
 }) {
   return (
-    <div>
-      <Swiper
-        grabCursor={true}
-        loop={false}
-        centeredSlides={true}
-        slidesPerView={3}
-        effect={'coverflow'}
-        coverflowEffect={{
-          rotate: 60,
-          scale: 1,
-          slideShadows: false,
-        }}
-        modules={[EffectCoverflow]}
-        
-      >
-        {items.map((item) => (
-          <SwiperSlide 
-            key={item.rank}>
-              <div>
-                <RankingList backgroundColor={backgroundColor} item={item} />
-              </div>
-          </SwiperSlide>
-        ))}
-
-
-      </Swiper>
-    </div>
+    <Swiper
+      grabCursor={true}
+      loop={false}
+      centeredSlides={true}
+      slidesPerView={3}
+      effect={'coverflow'}
+      coverflowEffect={{
+        rotate: 60,
+        scale: 1,
+        slideShadows: false,
+      }}
+      modules={[EffectCoverflow]}
+      className={`max-w-[${maxWidth}px]`}
+    >
+      {items.map((item) => (
+        <SwiperSlide 
+          key={item.rank}>
+            <div>
+              <RankingList item={item} />
+            </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   )
 }

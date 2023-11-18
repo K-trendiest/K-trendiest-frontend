@@ -1,8 +1,5 @@
 import getMovie from "../../../lib/getMovie";
-
-import Navbar from "../components/Navbar";
-import ChangeMotion from "../components/ChaneMotion";
-import SlideItems from "../components/SlideItems";
+import PageTemplate from "../components/PageTemplate";
 import { notFound } from "next/navigation";
 
 const movieDetails:CategoryDetail = {
@@ -18,13 +15,10 @@ export default async function moviePage() {
     notFound();
   }
   return (
-  <ChangeMotion pathname={movieDetails.category} categoryDetails={movieDetails}>
-    <div className="flex flex-col items-center h-screen">
-      <Navbar curpath={movieDetails.category} pointColor={movieDetails.pointColor} />
-      <div className={`max-w-[800px] h-auto`}>
-        <SlideItems backgroundColor={movieDetails.backgroundColor} maxWidth={700} items={movies}></SlideItems>
-      </div>
-    </div>
-  </ChangeMotion>
+    <PageTemplate
+      categoryDetails={movieDetails}
+      maxWidth={800}
+      items={movies}
+    />
   )
 }

@@ -8,7 +8,7 @@ const Navbar = ({ curpath, pointColor }: { curpath: String, pointColor: String }
     ];
 
   return (
-    <nav className='pt-16 flex justify-center items-center flex-col sticky top-0 z-10'>
+    <nav className='pt-16 flex justify-center items-center flex-col top-0 z-10'>
         <h1 className='text-5xl font-bold'>
             <Link href='/'>K-trendiest</Link>
         </h1>

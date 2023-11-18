@@ -1,10 +1,6 @@
 import getYoutube from '../../lib/getYoutube';
-
-import Navbar from "./components/Navbar";
-import ChangeMotion from "./components/ChaneMotion";
-import SlideItems from "./components/SlideItems";
+import PageTemplate from './components/PageTemplate';
 import { notFound } from 'next/navigation';
-import { Suspense } from 'react';
 
 const mainDetails:CategoryDetail = {
     category: "youtube",
@@ -19,15 +15,10 @@ export default async function mainPage() {
     }
 
     return (
-        <ChangeMotion pathname={mainDetails.category} categoryDetails={mainDetails}>
-            <div className="flex flex-col items-center h-screen">
-                <Navbar curpath={mainDetails.category} pointColor={mainDetails.pointColor} />
-                <Suspense fallback={<h2>Loading...</h2>}>
-                <div className={`max-w-[1200px] h-auto`}>
-                        <SlideItems backgroundColor={mainDetails.backgroundColor} maxWidth={1000} items={youtube}></SlideItems>
-                    </div>
-                </Suspense>
-            </div>
-        </ChangeMotion>
+        <PageTemplate
+            categoryDetails={mainDetails}
+            maxWidth={1200}
+            items={youtube}
+        />
     );
 };
