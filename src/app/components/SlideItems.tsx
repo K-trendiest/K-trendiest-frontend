@@ -9,7 +9,8 @@ import "swiper/css/pagination";
 
 import RankingList from './RankingList';
 
-export default function SlideItems({items}: {
+export default function SlideItems({pointColor, items}: {
+  pointColor: string;
   items:TrendItem[];
 }) {
   return (
@@ -25,13 +26,12 @@ export default function SlideItems({items}: {
         slideShadows: false,
       }}
       modules={[EffectCoverflow]}
-      className=''
     >
         {items.map((item) => (
           <SwiperSlide 
             key={item.rank}>
               <div>
-                <RankingList item={item} />
+                <RankingList color={pointColor} item={item} />
               </div>
           </SwiperSlide>
         ))}

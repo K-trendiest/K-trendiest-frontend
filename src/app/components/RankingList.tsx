@@ -1,12 +1,24 @@
 import Link from "next/link";
 
-export default function RankingList({ item }
+export default function RankingList({ color, item }
 : { 
+  color: string;
   item:TrendItem;
 }) {
+  const getRGB = (HEX:string) => {
+    let r = parseInt(HEX.slice(1,3), 16),
+      g = parseInt(HEX.slice(3,5), 16),
+      b = parseInt(HEX.slice(5,7), 16);
+
+    return {r, g, b}
+  }
+
+  const {r,g,b} = getRGB(color);
+
+
   return (
     <div key={item.rank} className="flex flex-col items-center">
-      <div className="text-4xl font-bold">
+      <div className="text-4xl font-bold drop-shawdow-2xl"  style={{ textShadow: `0px 0px 8px rgba(${r}, ${g}, ${b}, 0.7)` }}>
         {item.rank}
       </div>
       <img 
