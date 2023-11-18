@@ -12,7 +12,7 @@ const Navbar = ({ curpath, pointColor }: { curpath: String, pointColor: String }
         <h1 className='text-5xl font-bold'>
             <Link href='/'>K-trendiest</Link>
         </h1>
-        <ul className='flex flex-row justify-center gap-4'>
+        <ul className='flex flex-row justify-center gap-4 text-lg font-sans'>
             {categories.map((category, index) => (
                 <li 
                     key={index} 

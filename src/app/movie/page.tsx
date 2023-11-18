@@ -3,22 +3,28 @@ import getMovie from "../../../lib/getMovie";
 import Navbar from "../components/Navbar";
 import ChangeMotion from "../components/ChaneMotion";
 import SlideItems from "../components/SlideItems";
+import { notFound } from "next/navigation";
 
 const movieDetails:CategoryDetail = {
-    backgroundColor: '#001F54',
-    pointColor: '#FDC500',
+  category: "movie",
+  backgroundColor: '#001F54',
+  pointColor: '#ffebcd',
 }
 
 export default async function moviePage() {
-  const movieItems= await getMovie();
-  const curCategory = 'movie'
+  const movies = await getMovie();
 
+  if (!movies) {
+    notFound();
+  }
   return (
-    <div className="flex flex-col">
-        <ChangeMotion pathname={curCategory} categoryDetails={movieDetails}>
-            <Navbar curpath={curCategory} pointColor={movieDetails.pointColor} />
-            <SlideItems items={movieItems}></SlideItems>
-        </ChangeMotion>
+  <ChangeMotion pathname={movieDetails.category} categoryDetails={movieDetails}>
+    <div className="flex flex-col h-screen">
+      <Navbar curpath={movieDetails.category} pointColor={movieDetails.pointColor} />
+      <div className="flex flex-col justify-center pb-10 h-full">
+        <SlideItems backgroundColor={movieDetails.backgroundColor} maxWidth={800} items={movies}></SlideItems>
+      </div>
     </div>
+  </ChangeMotion>
   )
 }

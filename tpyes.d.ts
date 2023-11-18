@@ -1,6 +1,7 @@
 type Category = 'movie' | 'youtube' | 'music';
 
 type CategoryDetail = {
+    category: Category;
     backgroundColor: string;
     pointColor: string;
 }
