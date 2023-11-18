@@ -17,7 +17,7 @@ export default async function mainPage() {
     return (
         <PageTemplate
             categoryDetails={mainDetails}
-            maxWidth={1200}
+            maxWidth={1000}
             items={youtube}
         />
     );

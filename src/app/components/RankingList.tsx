@@ -5,7 +5,7 @@ export default function RankingList({ item }
   item:TrendItem;
 }) {
   return (
-    <div key={item.rank} className="flex flex-col">
+    <div key={item.rank} className="flex flex-col ">
         <div className="text-6xl font-bold ">
           {item.rank}
         </div>

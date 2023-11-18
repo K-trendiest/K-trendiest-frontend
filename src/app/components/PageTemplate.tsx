@@ -16,9 +16,9 @@ export default function PageTemplate({
       pathname={categoryDetails.category} 
       categoryDetails={categoryDetails}
     >
-      <div className="h-screen flex flex-col justify-center">
+      <div className="h-screen flex flex-col">
           <Navbar curpath={categoryDetails.category} pointColor={categoryDetails.pointColor} />
-          <div className="flex-grow flex justify-center items-center pb-8">
+          <div className="flex flex-grow flex-row items-center pb-16">
             <SlideItems maxWidth={maxWidth} items={items} />
           </div>
       </div>
