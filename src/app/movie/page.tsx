@@ -19,10 +19,10 @@ export default async function moviePage() {
   }
   return (
   <ChangeMotion pathname={movieDetails.category} categoryDetails={movieDetails}>
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col items-center h-screen">
       <Navbar curpath={movieDetails.category} pointColor={movieDetails.pointColor} />
-      <div className="flex flex-col justify-center pb-10 h-full">
-        <SlideItems backgroundColor={movieDetails.backgroundColor} maxWidth={800} items={movies}></SlideItems>
+      <div className={`max-w-[800px] h-auto`}>
+        <SlideItems backgroundColor={movieDetails.backgroundColor} maxWidth={700} items={movies}></SlideItems>
       </div>
     </div>
   </ChangeMotion>

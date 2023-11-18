@@ -20,9 +20,9 @@ export default async function musicPage() {
 
   return (
     <ChangeMotion pathname={musicDetails.category} categoryDetails={musicDetails}>
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col items-center h-screen">
         <Navbar curpath={musicDetails.category} pointColor={musicDetails.pointColor} />
-        <div className="flex flex-col justify-center pb-16 h-full">
+        <div className={`max-w-[1000px] h-auto`}>
           <SlideItems backgroundColor={musicDetails.backgroundColor} maxWidth={1000} items={music}></SlideItems>
         </div>
       </div>

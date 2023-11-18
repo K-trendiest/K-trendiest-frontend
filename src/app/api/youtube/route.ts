@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const DATA_SOURCE_URL = 'http://172.20.39.44:8080/youtubes';
+const DATA_SOURCE_URL = 'http://192.168.219.159:8080/youtubes';
 
 export async function GET() {
     const res = await fetch(DATA_SOURCE_URL);

@@ -15,7 +15,7 @@ export default function SlideItems({backgroundColor, maxWidth, items}: {
   items:TrendItem[];
 }) {
   return (
-    <div className=''>
+    <div>
       <Swiper
         grabCursor={true}
         loop={false}
@@ -28,8 +28,8 @@ export default function SlideItems({backgroundColor, maxWidth, items}: {
           slideShadows: false,
         }}
         modules={[EffectCoverflow]}
-        className={`max-w-[${maxWidth}px] h-auto`}
-      >   
+        
+      >
         {items.map((item) => (
           <SwiperSlide 
             key={item.rank}>
@@ -38,6 +38,8 @@ export default function SlideItems({backgroundColor, maxWidth, items}: {
               </div>
           </SwiperSlide>
         ))}
+
+
       </Swiper>
     </div>
   )
