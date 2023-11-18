@@ -16,10 +16,13 @@ export default async function musicPage() {
   }
 
   return (
-    <PageTemplate
-      categoryDetails={musicDetails}
-      maxWidth={1000}
-      items={music}
-    />
+    <div style={{backgroundColor: musicDetails.backgroundColor}} className="flex flex-col items-center">
+      <div className="max-w-[900px]">
+        <PageTemplate
+          categoryDetails={musicDetails}
+          items={music}
+        />
+      </div>
+    </div>
   )
 }

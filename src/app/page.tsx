@@ -15,10 +15,13 @@ export default async function mainPage() {
     }
 
     return (
-        <PageTemplate
-            categoryDetails={mainDetails}
-            maxWidth={1000}
-            items={youtube}
-        />
+        <div style={{backgroundColor: mainDetails.backgroundColor}} className="flex flex-col items-center">
+            <div className="max-w-[1200px]">
+                <PageTemplate
+                    categoryDetails={mainDetails}
+                    items={youtube}
+                />
+            </div>
+        </div>
     );
 };

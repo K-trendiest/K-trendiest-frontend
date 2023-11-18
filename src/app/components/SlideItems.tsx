@@ -9,8 +9,7 @@ import "swiper/css/pagination";
 
 import RankingList from './RankingList';
 
-export default function SlideItems({maxWidth, items}: {
-  maxWidth: number;
+export default function SlideItems({items}: {
   items:TrendItem[];
 }) {
   return (
@@ -26,16 +25,16 @@ export default function SlideItems({maxWidth, items}: {
         slideShadows: false,
       }}
       modules={[EffectCoverflow]}
-      className={`max-w-[${maxWidth}px]`}
+      className=''
     >
-      {items.map((item) => (
-        <SwiperSlide 
-          key={item.rank}>
-            <div>
-              <RankingList item={item} />
-            </div>
-        </SwiperSlide>
-      ))}
+        {items.map((item) => (
+          <SwiperSlide 
+            key={item.rank}>
+              <div>
+                <RankingList item={item} />
+              </div>
+          </SwiperSlide>
+        ))}
     </Swiper>
   )
 }

@@ -15,10 +15,13 @@ export default async function moviePage() {
     notFound();
   }
   return (
-    <PageTemplate
-      categoryDetails={movieDetails}
-      maxWidth={800}
-      items={movies}
-    />
+    <div style={{ backgroundColor: movieDetails.backgroundColor}} className="flex flex-col items-center">
+      <div className="max-w-[800px]">
+        <PageTemplate
+          categoryDetails={movieDetails}
+          items={movies}
+        />
+      </div>
+    </div>
   )
 }

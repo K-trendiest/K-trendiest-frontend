@@ -4,11 +4,9 @@ import SlideItems from "./SlideItems";
 
 export default function PageTemplate({
     categoryDetails,
-    maxWidth,
     items,
 }: {
     categoryDetails: CategoryDetail;
-    maxWidth: number;
     items: TrendItem[];
 }) {
   return (
@@ -16,11 +14,11 @@ export default function PageTemplate({
       pathname={categoryDetails.category} 
       categoryDetails={categoryDetails}
     >
-      <div className="h-screen flex flex-col">
-          <Navbar curpath={categoryDetails.category} pointColor={categoryDetails.pointColor} />
-          <div className="flex flex-grow flex-row items-center pb-16">
-            <SlideItems maxWidth={maxWidth} items={items} />
-          </div>
+      <div className="flex flex-col h-screen">
+        <Navbar curpath={categoryDetails.category} pointColor={categoryDetails.pointColor} />
+        <div className="h-full flex items-center pb-16">
+          <SlideItems items={items} />
+        </div>
       </div>
     </ChangeMotion>
   )
