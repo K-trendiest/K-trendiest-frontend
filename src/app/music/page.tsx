@@ -17,7 +17,7 @@ export default async function musicPage() {
 
   return (
     <div style={{backgroundColor: musicDetails.backgroundColor}} className="flex flex-col items-center">
-      <div className="max-w-[900px]">
+      <div className="max-w-[900px] ">
         <PageTemplate
           categoryDetails={musicDetails}
           items={music}

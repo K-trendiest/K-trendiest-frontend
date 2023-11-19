@@ -15,10 +15,9 @@ export default function RankingList({ color, item }
 
   const {r,g,b} = getRGB(color);
 
-
   return (
     <div key={item.rank} className="flex flex-col items-center">
-      <div className="text-4xl font-bold drop-shawdow-2xl"  style={{ textShadow: `0px 0px 8px rgba(${r}, ${g}, ${b}, 0.7)` }}>
+      <div className="text-4xl font-bold drop-shawdow-2xl" style={{ textShadow: `0px 0px 8px rgba(${r}, ${g}, ${b}, 0.7)` }}>
         {item.rank}
       </div>
       <img 
@@ -26,7 +25,7 @@ export default function RankingList({ color, item }
         alt={item.title}
         className="pb-4"
       />
-      <Link href={item.infoLink} className="flex flex-col">
+      <Link href={item.infoLink} className={'flex flex-col items-center'}>
         <div className="text-xl font-bold">
           {item.title}
         </div>

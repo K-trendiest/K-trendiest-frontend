@@ -1,22 +1,39 @@
 import Link from 'next/link'
 
-const Navbar = ({ curpath, pointColor }: { curpath: String, pointColor: String }) => {
+const Navbar = ({ curpath, pointColor }: { curpath: String, pointColor: string }) => {
     const categories = [
         {name: 'MUSIC', link: '/music'},
         {name: 'YOUTUBE', link: '/'},
         {name: 'MOVIE', link: '/movie'},
     ];
 
+    const getRGB = (HEX:string) => {
+        let r = parseInt(HEX.slice(1,3), 16),
+            g = parseInt(HEX.slice(3,5), 16),
+            b = parseInt(HEX.slice(5,7), 16);
+    
+        return {r, g, b}
+    }
+    
+    const getTextShadowStyle = (color:string) => {
+        const { r, g, b } = getRGB(color) ;
+        return {
+            textShadow: `2px 2px 0px rgba(${r}, ${g}, ${b}, 0.5),5px 5px 0px rgba(${r}, ${g}, ${b}, 0.2)`
+        }
+    }
+
+    const textShadowStyle = getTextShadowStyle(pointColor);
+
   return (
     <nav className='pt-16 flex justify-center items-center flex-col top-0 z-10'>
-        <h1 className='text-6xl font-bold'>
-            <Link href='/'>K-trendiest</Link>
-        </h1>
+        <Link href='/' className='text-6xl font-bold' style={textShadowStyle}>
+            K-trendiest
+        </Link>
         <ul className='flex flex-row justify-center gap-4 text-lg font-sans'>
             {categories.map((category, index) => (
-                <li 
-                    key={index} 
-                    className={`p-8 ${curpath === category.name.toLowerCase() ? pointColor : 'text-gray-500' }`}
+                <li
+                    key={index}
+                    className={`p-8 ${curpath === category.name.toLowerCase() ? `${pointColor} font-bold` : 'text-gray-500' }`}
                 >
                     <Link href={category.link}>
                         {category.name}
