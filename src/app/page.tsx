@@ -1,27 +1,28 @@
-import getYoutube from '../../lib/getYoutube';
-import PageTemplate from './components/PageTemplate';
-import { notFound } from 'next/navigation';
+import { notFound } from 'next/navigation'
 
-const mainDetails:CategoryDetail = {
-    category: "youtube",
-    backgroundColor: '#000000',
-    pointColor: '#D90429',
+import getYoutube from '@/lib/getYoutube'
+import PageTemplate from '@/components/PageTemplate'
+
+const mainDetails: CategoryDetail = {
+  category: 'youtube',
+  backgroundColor: '#000000',
+  pointColor: '#D90429',
 }
 export default async function mainPage() {
-    const youtube = await getYoutube();
+  const youtube = await getYoutube()
 
-    if(!youtube) {
-        notFound();
-    }
+  if (!youtube) {
+    notFound()
+  }
 
-    return (
-        <div style={{backgroundColor: mainDetails.backgroundColor}} className="flex flex-col items-center">
-            <div className="max-w-[1200px]">
-                <PageTemplate
-                    categoryDetails={mainDetails}
-                    items={youtube}
-                />
-            </div>
-        </div>
-    );
-};
+  return (
+    <div
+      style={{ backgroundColor: mainDetails.backgroundColor }}
+      className="flex flex-col items-center"
+    >
+      <div className="max-w-[1200px]">
+        <PageTemplate categoryDetails={mainDetails} items={youtube} />
+      </div>
+    </div>
+  )
+}

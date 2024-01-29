@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Noto_Sans_KR } from 'next/font/google'
-import './globals.css'
+import './global.css'
 
-const notoSansKR = Noto_Sans_KR({ weight: '600', subsets: ['latin']})
+const notoSansKR = Noto_Sans_KR({ weight: '600', subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'K-trenditest',
@@ -10,14 +10,13 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  children
+  children,
 }: {
   children: React.ReactNode
 }) {
-
   return (
     <html lang="en">
-      <body className={notoSansKR.className} suppressHydrationWarning={true}>
+      <body className={notoSansKR.className} suppressHydrationWarning>
         {children}
       </body>
     </html>

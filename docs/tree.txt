@@ -1,0 +1,29 @@
+src
+├── api
+│   ├── movies
+│   │   └── route.ts
+│   ├── musics
+│   │   └── route.ts
+│   └── youtube
+│       └── route.ts
+├── app
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── movie
+│   │   └── page.tsx
+│   ├── music
+│   │   └── page.tsx
+│   └── page.tsx
+├── components
+│   ├── ChaneMotion.tsx
+│   ├── Navbar.tsx
+│   ├── PageTemplate.tsx
+│   ├── RankingList.tsx
+│   └── SlideItems.tsx
+└── lib
+    ├── getMovie.ts
+    ├── getMusic.ts
+    └── getYoutube.ts
+
+9 directories, 17 files
