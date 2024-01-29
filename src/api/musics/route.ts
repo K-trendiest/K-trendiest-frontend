@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-const DATA_SOURCE_URL = 'http://192.168.103.184:8080/music'
+const DATA_SOURCE_URL = 'http://192.168.103.184:8080/musics'
 
 export default async function GET() {
   const res = await fetch(DATA_SOURCE_URL)

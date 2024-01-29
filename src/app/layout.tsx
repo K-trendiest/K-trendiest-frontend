@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Noto_Sans_KR } from 'next/font/google'
-import './global.css'
+import './globals.css'
 
 const notoSansKR = Noto_Sans_KR({ weight: '600', subsets: ['latin'] })
 
