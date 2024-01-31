@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 export default function RankingList({
@@ -26,8 +25,8 @@ export default function RankingList({
       >
         {item.rank}
       </div>
-      <img src={item.imageLink} alt={item.title} className="pb-4" />
-      <Link href={item.infoLink} className="flex flex-col items-center">
+      <Link href={item.infoLink} className="flex flex-col items-center pb-8">
+        <img src={item.imageLink} alt={item.title} className="pb-4" />
         <div className="text-xl font-bold">{item.title}</div>
         <div>{item.artistName}</div>
       </Link>

@@ -1,7 +1,7 @@
 'use client'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { EffectCoverflow } from 'swiper/modules'
+import { EffectCoverflow, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -18,6 +18,9 @@ export default function SlideItems({
   return (
     <Swiper
       grabCursor
+      pagination={{
+        clickable: true,
+      }}
       loop={false}
       centeredSlides
       slidesPerView={3}
@@ -27,7 +30,7 @@ export default function SlideItems({
         scale: 1,
         slideShadows: false,
       }}
-      modules={[EffectCoverflow]}
+      modules={[EffectCoverflow, Pagination]}
     >
       {items.map((item) => (
         <SwiperSlide key={item.rank}>
