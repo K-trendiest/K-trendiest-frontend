@@ -1,7 +1,12 @@
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import PageTemplate from '../components/PageTemplate'
 import getMovie from '../../../lib/getMovie'
+
+export const metadata: Metadata = {
+  title: 'movie',
+}
 
 const movieDetails: CategoryDetail = {
   category: 'movie',

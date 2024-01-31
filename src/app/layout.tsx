@@ -5,7 +5,10 @@ import './globals.css'
 const notoSansKR = Noto_Sans_KR({ weight: '600', subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'K-trenditest',
+  title: {
+    default: 'K-trendiest - youtube',
+    template: 'K-trendiest - %s',
+  },
   description: 'Introduce daily rankings of Korean music, movies, and videos.',
 }
 

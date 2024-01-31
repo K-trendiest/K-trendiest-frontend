@@ -1,7 +1,12 @@
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import PageTemplate from '../components/PageTemplate'
 import getMusic from '../../../lib/getMusic'
+
+export const metadata: Metadata = {
+  title: 'music',
+}
 
 const musicDetails: CategoryDetail = {
   category: 'music',
