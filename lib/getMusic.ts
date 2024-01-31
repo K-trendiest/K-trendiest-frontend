@@ -1,5 +1,5 @@
 export default async function getMusic(): Promise<TrendItem[]> {
-  const res = await fetch('http://localhost:3000/api/musics', {
+  const res = await fetch(`${process.env.BASE_URL}/api/musics`, {
     next: { revalidate: 60 },
   })
 

@@ -1,5 +1,5 @@
 export default async function getMovie(): Promise<TrendItem[]> {
-  const res = await fetch('http://localhost:3000/api/movies', {
+  const res = await fetch(`${process.env.BASE_URL}/api/movies`, {
     next: { revalidate: 60 },
   })
 

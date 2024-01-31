@@ -1,9 +1,7 @@
 import { NextResponse } from 'next/server'
 
-const DATA_SOURCE_URL = 'http://3.34.137.252:8080/youtubes'
-
 export async function GET() {
-  const res = await fetch(DATA_SOURCE_URL)
+  const res = await fetch(`${process.env.DATA_SOURCE_URL}/youtubes`)
 
   const youtube: TrendItem[] = await res.json()
 
