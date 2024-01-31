@@ -1,6 +1,6 @@
-import Navbar from '@/components/Navbar'
-import ChangeMotion from '@/components/ChaneMotion'
-import SlideItems from '@/components/SlideItems'
+import Navbar from './Navbar'
+import ChangeMotion from './ChaneMotion'
+import SlideItems from './SlideItems'
 
 export default function PageTemplate({
   categoryDetails,

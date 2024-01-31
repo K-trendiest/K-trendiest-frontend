@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 
-import getMovie from '@/lib/getMovie'
-import PageTemplate from '@/components/PageTemplate'
+import PageTemplate from '../components/PageTemplate'
+import getMovie from '../../../lib/getMovie'
 
 const movieDetails: CategoryDetail = {
   category: 'movie',

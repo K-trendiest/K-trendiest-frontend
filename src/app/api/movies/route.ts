@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server'
 
-const DATA_SOURCE_URL = 'http://192.168.103.184:8080/movies'
+const DATA_SOURCE_URL = 'http://192.168.218.184:8080/movies'
 
-export default async function GET() {
+export async function GET() {
   const res = await fetch(DATA_SOURCE_URL)
 
   const movies: TrendItem[] = await res.json()

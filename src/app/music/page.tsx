@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 
-import getMusic from '@/lib/getMusic'
-import PageTemplate from '@/components/PageTemplate'
+import PageTemplate from '../components/PageTemplate'
+import getMusic from '../../../lib/getMusic'
 
 const musicDetails: CategoryDetail = {
   category: 'music',

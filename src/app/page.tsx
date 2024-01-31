@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 
-import getYoutube from '@/lib/getYoutube'
-import PageTemplate from '@/components/PageTemplate'
+import PageTemplate from './components/PageTemplate'
+import getYoutube from '../../lib/getYoutube'
 
 const mainDetails: CategoryDetail = {
   category: 'youtube',

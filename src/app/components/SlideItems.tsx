@@ -6,7 +6,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
-import RankingList from '@/components/RankingList'
+import RankingList from './RankingList'
 
 export default function SlideItems({
   pointColor,
