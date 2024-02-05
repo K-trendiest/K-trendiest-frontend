@@ -15,9 +15,7 @@ const movieDetails: CategoryDetail = {
 }
 
 const getMovie = async () => {
-  const res = await fetch(`${BASE_API_URL}/api/movies`, {
-    next: { revalidate: 60 },
-  })
+  const res = await fetch(`${BASE_API_URL}/api/movies`)
 
   if (!res.ok) {
     throw new Error('failed to fetch MOVIE data')

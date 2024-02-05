@@ -15,9 +15,7 @@ const musicDetails: CategoryDetail = {
 }
 
 const getMusic = async () => {
-  const res = await fetch(`${BASE_API_URL}/api/musics`, {
-    next: { revalidate: 60 },
-  })
+  const res = await fetch(`${BASE_API_URL}/api/musics`)
 
   if (!res.ok) {
     throw new Error('failed to fetch MUSIC data')

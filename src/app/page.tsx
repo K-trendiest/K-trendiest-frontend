@@ -10,15 +10,13 @@ const mainDetails: CategoryDetail = {
 }
 
 const getYoutube = async () => {
-  const res = await fetch(`${BASE_API_URL}/api/youtube`, {
-    next: { revalidate: 60 },
-  })
+  const res = await fetch(`${BASE_API_URL}/api/youtube`)
 
   if (!res.ok) {
     throw new Error('failed to fetch YOUTUBE data')
   }
-  const result = await res.json()
 
+  const result = await res.json()
   return result
 }
 
