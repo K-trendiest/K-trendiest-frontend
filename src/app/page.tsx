@@ -11,7 +11,7 @@ const mainDetails: CategoryDetail = {
 
 const getYoutube = async () => {
   const res = await fetch(`${BASE_API_URL}/api/youtube`, {
-    next: { revalidate: 60 },
+    next: { revalidate: 0 },
   })
 
   if (!res.ok) throw new Error('failed to fetch YOUTUBE data')
@@ -25,6 +25,7 @@ export default async function mainPage() {
   }
 
   const youtube = await getYoutube()
+  console.log(youtube)
 
   if (!youtube) {
     notFound()
