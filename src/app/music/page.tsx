@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation'
 
 import { BASE_API_URL } from '@/utils/constants'
 import PageTemplate from '../components/PageTemplate'
-import getMusic from '../../../lib/getMusic'
 
 export const metadata: Metadata = {
   title: 'music',
@@ -13,6 +12,19 @@ const musicDetails: CategoryDetail = {
   category: 'music',
   backgroundColor: '#FFFFFF',
   pointColor: '#0466C8',
+}
+
+const getMusic = async () => {
+  const res = await fetch(`${BASE_API_URL}/api/musics`, {
+    next: { revalidate: 60 },
+  })
+
+  if (!res.ok) {
+    throw new Error('failed to fetch MUSIC data')
+  }
+
+  const result = res.json()
+  return result
 }
 
 export default async function musicPage() {

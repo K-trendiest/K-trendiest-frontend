@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation'
 
 import { BASE_API_URL } from '@/utils/constants'
 import PageTemplate from '../components/PageTemplate'
-import getMovie from '../../../lib/getMovie'
 
 export const metadata: Metadata = {
   title: 'movie',
@@ -13,6 +12,19 @@ const movieDetails: CategoryDetail = {
   category: 'movie',
   backgroundColor: '#001F54',
   pointColor: '#ffebcd',
+}
+
+const getMovie = async () => {
+  const res = await fetch(`${BASE_API_URL}/api/movies`, {
+    next: { revalidate: 60 },
+  })
+
+  if (!res.ok) {
+    throw new Error('failed to fetch MOVIE data')
+  }
+
+  const result = await res.json()
+  return result
 }
 
 export default async function moviePage() {

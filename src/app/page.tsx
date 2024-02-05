@@ -11,7 +11,7 @@ const mainDetails: CategoryDetail = {
 
 const getYoutube = async () => {
   const res = await fetch(`${BASE_API_URL}/api/youtube`, {
-    next: { revalidate: 0 },
+    next: { revalidate: 60 },
   })
 
   if (!res.ok) {
