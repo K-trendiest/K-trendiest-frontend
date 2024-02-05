@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
+import { BASE_API_URL } from '@/utils/constants'
 import PageTemplate from '../components/PageTemplate'
 import getMusic from '../../../lib/getMusic'
 
@@ -15,6 +16,10 @@ const musicDetails: CategoryDetail = {
 }
 
 export default async function musicPage() {
+  if (!BASE_API_URL) {
+    return null
+  }
+
   const music = await getMusic()
 
   if (!music) {

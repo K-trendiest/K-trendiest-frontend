@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 
+import { BASE_API_URL } from '@/utils/constants'
 import PageTemplate from './components/PageTemplate'
 import getYoutube from '../../lib/getYoutube'
 
@@ -9,6 +10,10 @@ const mainDetails: CategoryDetail = {
   pointColor: '#D90429',
 }
 export default async function mainPage() {
+  if (!BASE_API_URL) {
+    return null
+  }
+
   const youtube = await getYoutube()
 
   if (!youtube) {

@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
+import { BASE_API_URL } from '@/utils/constants'
 import PageTemplate from '../components/PageTemplate'
 import getMovie from '../../../lib/getMovie'
 
@@ -15,6 +16,10 @@ const movieDetails: CategoryDetail = {
 }
 
 export default async function moviePage() {
+  if (!BASE_API_URL) {
+    return null
+  }
+
   const movies = await getMovie()
 
   if (!movies) {
