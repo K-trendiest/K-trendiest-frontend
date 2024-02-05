@@ -1,6 +1,6 @@
 import { BASE_API_URL } from '@/utils/constants'
 
-export default async function getMusic() {
+export default async function getYoutube() {
   if (!BASE_API_URL) {
     return null
   }

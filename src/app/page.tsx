@@ -2,13 +2,23 @@ import { notFound } from 'next/navigation'
 
 import { BASE_API_URL } from '@/utils/constants'
 import PageTemplate from './components/PageTemplate'
-import getYoutube from '../../lib/getYoutube'
 
 const mainDetails: CategoryDetail = {
   category: 'youtube',
   backgroundColor: '#000000',
   pointColor: '#D90429',
 }
+
+const getYoutube = async () => {
+  const res = await fetch(`${BASE_API_URL}/api/youtube`, {
+    next: { revalidate: 60 },
+  })
+
+  if (!res.ok) throw new Error('failed to fetch YOUTUBE data')
+
+  return res.json()
+}
+
 export default async function mainPage() {
   if (!BASE_API_URL) {
     return null
