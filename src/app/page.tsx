@@ -14,9 +14,12 @@ const getYoutube = async () => {
     next: { revalidate: 0 },
   })
 
-  if (!res.ok) throw new Error('failed to fetch YOUTUBE data')
+  if (!res.ok) {
+    throw new Error('failed to fetch YOUTUBE data')
+  }
+  const result = await res.json()
 
-  return res.json()
+  return result
 }
 
 export default async function mainPage() {
@@ -25,7 +28,6 @@ export default async function mainPage() {
   }
 
   const youtube = await getYoutube()
-  console.log(youtube)
 
   if (!youtube) {
     notFound()
