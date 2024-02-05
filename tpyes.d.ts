@@ -6,11 +6,6 @@ type CategoryDetail = {
   pointColor: string
 }
 
-// type PageProps = {
-//   categoryDetails: CategoryDetail
-//   items: any[]
-// }
-
 type TrendItem = {
   rank: number
   title: string

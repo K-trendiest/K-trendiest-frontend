@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@types/react-transition-group": "^4.4.9",
+    "dotenv-expand": "^10.0.0",
     "framer-motion": "^10.16.5",
     "next": "14.0.2",
     "react": "^18",
