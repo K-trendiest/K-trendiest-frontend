@@ -46,3 +46,5 @@ export default async function moviePage() {
     </div>
   )
 }
+
+export const dynamic = 'force-dynamic'

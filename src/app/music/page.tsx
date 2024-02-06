@@ -47,3 +47,5 @@ export default async function musicPage() {
     </div>
   )
 }
+
+export const dynamic = 'force-dynamic'
