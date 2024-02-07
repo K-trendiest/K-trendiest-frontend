@@ -13,7 +13,7 @@ const movieDetails: CategoryDetail = {
 }
 
 const getMovie = async () => {
-  const res = await fetch(`${process.env.DATA_SOURCE_URL}/api/movies`)
+  const res = await fetch(`${process.env.DATA_SOURCE_URL}/movies`)
 
   if (!res.ok) {
     throw new Error('failed to fetch MOVIE data')
