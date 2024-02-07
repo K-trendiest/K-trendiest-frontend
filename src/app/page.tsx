@@ -1,6 +1,3 @@
-import { notFound } from 'next/navigation'
-
-import { BASE_API_URL } from '@/utils/constants'
 import PageTemplate from './components/PageTemplate'
 
 const mainDetails: CategoryDetail = {
@@ -10,26 +7,19 @@ const mainDetails: CategoryDetail = {
 }
 
 const getYoutube = async () => {
-  const res = await fetch(`${BASE_API_URL}/api/youtube`)
+  const res = await fetch(`${process.env.DATA_SOURCE_URL}/youtubes`)
 
   if (!res.ok) {
     throw new Error('failed to fetch YOUTUBE data')
   }
 
-  const result = await res.json()
+  const result: TrendItem[] = await res.json()
+
   return result
 }
 
 export default async function mainPage() {
-  if (!BASE_API_URL) {
-    return null
-  }
-
   const youtube = await getYoutube()
-
-  if (!youtube) {
-    notFound()
-  }
 
   return (
     <div
