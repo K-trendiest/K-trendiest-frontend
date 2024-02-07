@@ -7,7 +7,9 @@ const mainDetails: CategoryDetail = {
 }
 
 const getYoutube = async () => {
-  const res = await fetch(`${process.env.DATA_SOURCE_URL}/youtubes`)
+  const res = await fetch(`${process.env.DATA_SOURCE_URL}/youtubes`, {
+    next: { revalidate: 3600 },
+  })
 
   if (!res.ok) {
     throw new Error('failed to fetch YOUTUBE data')
@@ -32,5 +34,3 @@ export default async function mainPage() {
     </div>
   )
 }
-
-export const dynamic = 'force-dynamic'

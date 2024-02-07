@@ -13,7 +13,9 @@ const musicDetails: CategoryDetail = {
 }
 
 const getMusic = async () => {
-  const res = await fetch(`${process.env.DATA_SOURCE_URL}/music`)
+  const res = await fetch(`${process.env.DATA_SOURCE_URL}/music`, {
+    next: { revalidate: 3600 },
+  })
 
   if (!res.ok) {
     throw new Error('failed to fetch MUSIC data')
@@ -38,5 +40,3 @@ export default async function musicPage() {
     </div>
   )
 }
-
-export const dynamic = 'force-dynamic'

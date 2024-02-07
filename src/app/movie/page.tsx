@@ -13,7 +13,9 @@ const movieDetails: CategoryDetail = {
 }
 
 const getMovie = async () => {
-  const res = await fetch(`${process.env.DATA_SOURCE_URL}/movies`)
+  const res = await fetch(`${process.env.DATA_SOURCE_URL}/movies`, {
+    next: { revalidate: 3600 },
+  })
 
   if (!res.ok) {
     throw new Error('failed to fetch MOVIE data')
@@ -38,5 +40,3 @@ export default async function moviePage() {
     </div>
   )
 }
-
-export const dynamic = 'force-dynamic'
